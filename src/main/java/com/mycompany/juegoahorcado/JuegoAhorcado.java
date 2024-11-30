@@ -39,7 +39,13 @@ public class JuegoAhorcado {
                     System.out.println("Has escogido: " + palabra);
                     
                     //cambiamos los valores de la palabra por incognitas: "x"
+                    //1º pasar la palabra a array.¿lo hago en medodo? 
                     
+                        System.out.println("Escoge letra: ");
+                        String eleccionLetra = sc.nextLine().toLowerCase();
+                        char letra = eleccion.charAt(0);
+                        
+                        
                     
                     fallosFin = contadorFallos(fallo);
                     }
