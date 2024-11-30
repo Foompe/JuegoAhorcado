@@ -16,7 +16,7 @@ public class JuegoAhorcado {
     public static void main(String[] args) {
 
         int fallos = 0;
-        
+       
     }
 
 
