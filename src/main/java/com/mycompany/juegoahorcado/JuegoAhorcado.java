@@ -36,17 +36,30 @@ public class JuegoAhorcado {
                     //pedimos la palabra a adivinar
                     System.out.println("Introduce palabra a adivinar");
                     String palabra = sc.nextLine().toLowerCase();
-                    System.out.println("Has escogido: " + palabra);
+                    System.out.println("Has escogido: " + palabra);                    
+                    
+                    //1º pasar la palabra a array.
+                    char[] caracteres = palabra.toCharArray();
                     
                     //cambiamos los valores de la palabra por incognitas: "x"
-                    //1º pasar la palabra a array.¿lo hago en medodo? 
                     
+                    //pedimos la letra
                         System.out.println("Escoge letra: ");
                         String eleccionLetra = sc.nextLine().toLowerCase();
                         char letra = eleccion.charAt(0);
                         
+                    //miramos si la palabra contiene la letra (pasamos de char a string) 
+                    if (palabra.contains(Character.toString(letra))) {
                         
-                    
+                        
+                        
+                        
+                        
+                    } else { //si no tiene la letra sumamos un fallo
+                        System.out.println("No posee esa letra!\nTe quedan: " + (5 - fallo) + " intentos");
+                        ++fallo;
+                    }
+                    //muestra la figura del ahorcado
                     fallosFin = contadorFallos(fallo);
                     }
                     break;
@@ -67,11 +80,11 @@ public class JuegoAhorcado {
      * @param fallo toma el número de fallos e imprime un mensaje en pantalla
      */
     public static boolean contadorFallos(int fallo) {
-
-        //introducir un contador de fallos
-        int fallos = fallo;
         
-        switch (fallos) {
+        System.out.println("\nTienes " + fallo + " fallos.\n");
+        
+        
+        switch (fallo) {
             case 0:
                 System.out.println(".-----.");
                 System.out.println(".|...|.");
@@ -127,7 +140,7 @@ public class JuegoAhorcado {
                 System.out.println("-------");
                 break;
         }
-        if (fallos >= 5) {
+        if (fallo >= 5) {
             return false;
         }
         return true;
